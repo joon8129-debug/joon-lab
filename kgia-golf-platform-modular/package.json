@@ -1,0 +1,37 @@
+{
+  "name": "kgia-golf-platform-modular",
+  "version": "7.1.0-modular",
+  "private": true,
+  "description": "KGIA / 모두의프로암 골프 파트너 매칭 v7 모듈형 플랫폼. 기능별 패키지로 다른 서비스에서도 재사용 가능.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "node apps/golf-partner-web/api/server.js",
+    "app:start": "node apps/golf-partner-web/api/server.js",
+    "app:check": "npm --prefix apps/golf-partner-web run check",
+    "app:smoke": "npm --prefix apps/golf-partner-web run smoke",
+    "modules:check": "node scripts/check_modules.js",
+    "modules:smoke": "node test/modules.smoke.js",
+    "check": "npm run modules:check && npm run modules:smoke && npm run app:check",
+    "smoke": "npm run app:smoke"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "kgia",
+    "moduproam",
+    "golf",
+    "matching",
+    "monorepo",
+    "reusable-modules",
+    "gci",
+    "gcan",
+    "proam",
+    "crm",
+    "growth"
+  ],
+  "license": "UNLICENSED"
+}
